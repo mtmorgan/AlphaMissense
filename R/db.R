@@ -209,9 +209,6 @@ db_table <-
         record, bfc, db_tbl_name, rname = NULL, fpath = NULL,
         template = "import_csv", delim = "\\t")
 {
-    ## must be 'read_only = FALSE' so new database can be created. use
-    ## 'managed = FALSE' so connection is independent of other
-    ## read-write connections
     db <- db_connect(record, bfc)
     if (!db_tbl_name %in% db_tables(db)) {
         db <- db_table_new(

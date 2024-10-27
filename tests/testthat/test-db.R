@@ -26,27 +26,6 @@ test_that("'db_connect()' works", {
     db_disconnect(db)
 })
 
-test_that("'db_connect_or_renew()' works", {
-    fl <- tempfile(); dir.create(fl)
-    bfc <- BiocFileCache::BiocFileCache(fl)
-
-    db <- db_connect_or_renew(ALPHAMISSENSE_RECORD, bfc)
-    expect_true(DBI::dbIsValid(db))
-    expect_output(db1 <- db_connect_or_renew(ALPHAMISSENSE_RECORD, bfc))
-    expect_false(DBI::dbIsValid(db)) # invalidates previous connection
-    expect_true(DBI::dbIsValid(db1))
-    db_disconnect(db1)
-
-    ## managed connections are never renewed
-    db0 <- db_connect_or_renew(ALPHAMISSENSE_RECORD, bfc, managed = FALSE)
-    db1 <- db_connect_or_renew(ALPHAMISSENSE_RECORD, bfc, managed = FALSE)
-    expect_false(identical(db0, db1))
-    expect_true(DBI::dbIsValid(db0))
-    expect_true(DBI::dbIsValid(db1))
-    db_disconnect(db0)
-    db_disconnect(db1)
-})
-
 test_that("'db_tables() works", {
     fl <- tempfile(); dir.create(fl)
     bfc <- BiocFileCache::BiocFileCache(fl)
