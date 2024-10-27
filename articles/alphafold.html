@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">AlphaMissenseR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.10</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,7 +106,7 @@ locally.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/AlphaMissense.html">am_data</a></span><span class="op">(</span><span class="st">"aa_substitutions"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># Source:   table&lt;aa_substitutions&gt; [?? x 4]</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v1.1.0 [root@Darwin 23.6.0:R 4.5.0//Users/mtmorgan/Library/Caches/org.R-project.R/R/BiocFileCache/121787f1dafbc_121787f1dafbc]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v1.1.1 [mtmorgan@Darwin 23.6.0:R 4.5.0//Users/mtmorgan/Library/Caches/org.R-project.R/R/BiocFileCache/121787f1dafbc_121787f1dafbc]</span></span></span>
 <span><span class="co">#&gt;    uniprot_id protein_variant am_pathogenicity am_class  </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> A0A024R1R8 M1A                        0.467 ambiguous </span></span>
@@ -122,7 +122,7 @@ locally.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ more rows</span></span></span>
 <span><span class="fu"><a href="../reference/AlphaMissense.html">am_data</a></span><span class="op">(</span><span class="st">"hg38"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># Source:   table&lt;hg38&gt; [?? x 10]</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v1.1.0 [root@Darwin 23.6.0:R 4.5.0//Users/mtmorgan/Library/Caches/org.R-project.R/R/BiocFileCache/121787f1dafbc_121787f1dafbc]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v1.1.1 [mtmorgan@Darwin 23.6.0:R 4.5.0//Users/mtmorgan/Library/Caches/org.R-project.R/R/BiocFileCache/121787f1dafbc_121787f1dafbc]</span></span></span>
 <span><span class="co">#&gt;    CHROM   POS REF   ALT   genome uniprot_id transcript_id     protein_variant</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> chr1  <span style="text-decoration: underline;">69</span>094 G     T     hg38   Q8NH21     ENST00000335137.4 V2L            </span></span>
@@ -174,9 +174,9 @@ publication.</p>
 <span>    <span class="fu"><a href="../reference/AlphaMissense.html">am_data</a></span><span class="op">(</span><span class="st">"aa_substitutions"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">uniprot_id</span> <span class="op">%like%</span> <span class="st">"P3555%"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">uniprot_id</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu">pull</span><span class="op">(</span><span class="va">uniprot_id</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html" class="external-link">pull</a></span><span class="op">(</span><span class="va">uniprot_id</span><span class="op">)</span></span>
 <span><span class="va">uniprot_ids</span></span>
-<span><span class="co">#&gt; [1] "P35556" "P35557" "P35558" "P35555"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "P35555" "P35556" "P35558" "P35557"</span></span></code></pre></div>
 <p>The <a href="https://mtmorgan.github.io/AlphaMissenseR">AlphaMissenseR</a>
 package includes several functions that facilitate interaction with <a href="https://alphafold.ebi.ac.uk/" class="external-link">AlphaFold</a>; these functions start
 with <code>af_*()</code>. Use <code><a href="../reference/AlphaFold.html">af_predictions()</a></code> to discover
@@ -184,36 +184,36 @@ AlphaFold predictions (via the AlphaFold API) associated with UniProt
 identifiers.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">prediction</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/AlphaFold.html">af_predictions</a></span><span class="op">(</span><span class="va">uniprot_ids</span><span class="op">)</span></span>
-<span><span class="co">#&gt; * [14:06:38][info] 2 of 4 uniprot accessions not found</span></span>
-<span><span class="co">#&gt;   'P35556', 'P35555'</span></span>
-<span><span class="fu">glimpse</span><span class="op">(</span><span class="va">prediction</span><span class="op">)</span></span>
+<span><span class="co">#&gt; * [09:25:35][info] 2 of 4 uniprot accessions not found</span></span>
+<span><span class="co">#&gt;   'P35555', 'P35556'</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">prediction</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Rows: 2</span></span>
 <span><span class="co">#&gt; Columns: 25</span></span>
-<span><span class="co">#&gt; $ entryId                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AF-P35557-F1", "AF-P35558-F1"</span></span>
-<span><span class="co">#&gt; $ gene                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "GCK", "PCK1"</span></span>
-<span><span class="co">#&gt; $ sequenceChecksum       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "094D4A2F78096724", "78D309E0845CC181"</span></span>
-<span><span class="co">#&gt; $ sequenceVersionDate    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1994-06-01", "2006-03-07"</span></span>
-<span><span class="co">#&gt; $ uniprotAccession       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "P35557", "P35558"</span></span>
-<span><span class="co">#&gt; $ uniprotId              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "HXK4_HUMAN", "PCKGC_HUMAN"</span></span>
-<span><span class="co">#&gt; $ uniprotDescription     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Hexokinase-4", "Phosphoenolpyruvate carboxykin…</span></span>
+<span><span class="co">#&gt; $ entryId                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AF-P35558-F1", "AF-P35557-F1"</span></span>
+<span><span class="co">#&gt; $ gene                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "PCK1", "GCK"</span></span>
+<span><span class="co">#&gt; $ sequenceChecksum       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "78D309E0845CC181", "094D4A2F78096724"</span></span>
+<span><span class="co">#&gt; $ sequenceVersionDate    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2006-03-07", "1994-06-01"</span></span>
+<span><span class="co">#&gt; $ uniprotAccession       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "P35558", "P35557"</span></span>
+<span><span class="co">#&gt; $ uniprotId              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "PCKGC_HUMAN", "HXK4_HUMAN"</span></span>
+<span><span class="co">#&gt; $ uniprotDescription     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Phosphoenolpyruvate carboxykinase, cytosolic […</span></span>
 <span><span class="co">#&gt; $ taxId                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 9606, 9606</span></span>
 <span><span class="co">#&gt; $ organismScientificName <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Homo sapiens", "Homo sapiens"</span></span>
 <span><span class="co">#&gt; $ uniprotStart           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 1</span></span>
-<span><span class="co">#&gt; $ uniprotEnd             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 465, 622</span></span>
-<span><span class="co">#&gt; $ uniprotSequence        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "MLDDRARMEAAKKEKVEQILAEFQLQEEDLKKVMRRMQKEMDRGLR…</span></span>
+<span><span class="co">#&gt; $ uniprotEnd             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 622, 465</span></span>
+<span><span class="co">#&gt; $ uniprotSequence        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "MPPQLQNGLNLSAKVVQGSLDSLPQAVREFLENNAELCQPDHIHIC…</span></span>
 <span><span class="co">#&gt; $ modelCreatedDate       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2022-06-01", "2022-06-01"</span></span>
 <span><span class="co">#&gt; $ latestVersion          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 4, 4</span></span>
 <span><span class="co">#&gt; $ allVersions            <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> [1, 2, 3, 4], [1, 2, 3, 4]</span></span>
 <span><span class="co">#&gt; $ isReviewed             <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE, TRUE</span></span>
 <span><span class="co">#&gt; $ isReferenceProteome    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE, TRUE</span></span>
-<span><span class="co">#&gt; $ cifUrl                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span>
-<span><span class="co">#&gt; $ bcifUrl                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span>
-<span><span class="co">#&gt; $ pdbUrl                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span>
-<span><span class="co">#&gt; $ paeImageUrl            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span>
-<span><span class="co">#&gt; $ paeDocUrl              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span>
-<span><span class="co">#&gt; $ amAnnotationsUrl       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span>
-<span><span class="co">#&gt; $ amAnnotationsHg19Url   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span>
-<span><span class="co">#&gt; $ amAnnotationsHg38Url   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35557-F1…</span></span></code></pre></div>
+<span><span class="co">#&gt; $ cifUrl                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span>
+<span><span class="co">#&gt; $ bcifUrl                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span>
+<span><span class="co">#&gt; $ pdbUrl                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span>
+<span><span class="co">#&gt; $ paeImageUrl            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span>
+<span><span class="co">#&gt; $ paeDocUrl              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span>
+<span><span class="co">#&gt; $ amAnnotationsUrl       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span>
+<span><span class="co">#&gt; $ amAnnotationsHg19Url   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span>
+<span><span class="co">#&gt; $ amAnnotationsHg38Url   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://alphafold.ebi.ac.uk/files/AF-P35558-F1…</span></span></code></pre></div>
 <p>Note the message indicating that some UniProt identifiers
 (accessions) are not found in the AlphaFold database. The query returns
 a tibble containing columns with information on organism and UniProt
@@ -328,7 +328,7 @@ mechanism for translating a vector of scores between zero and one into a
 vector of colors. This is illustrated for a 12-amino acid sequence where
 the first and last residues are uncolored.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
 <span>    pos <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, <span class="co"># no color information for position 1</span></span>
 <span>    value <span class="op">=</span> <span class="fl">10</span><span class="op">:</span><span class="fl">1</span> <span class="op">/</span> <span class="fl">10</span></span>
 <span><span class="op">)</span></span>
@@ -387,7 +387,7 @@ of interest.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gpos</span> <span class="op">&lt;-</span></span>
 <span>    <span class="fu"><a href="../reference/AlphaMissense.html">am_data</a></span><span class="op">(</span><span class="st">"hg38"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">uniprot_id</span> <span class="op">==</span> <span class="st">"Q1W6H9"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">uniprot_id</span> <span class="op">==</span> <span class="st">"Q1W6H9"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="../reference/GenomicRanges.html">to_GPos</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>The function <code>plot_granges</code> invokes functionality from the
 <a href="https://bioconductor.org/packages/shiny.gosling" class="external-link">shiny.gosling</a>
@@ -426,7 +426,8 @@ benign, pathogenic).</p>
 <p>Remember to disconnect and shutdown all managed DuckDB
 connections.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/db.html">db_disconnect_all</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/db.html">db_disconnect_all</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; * [09:25:40][info] disconnecting all registered connections</span></span></code></pre></div>
 <p>Database connections that are not closed correctly trigger warning
 messages.</p>
 </div>
@@ -453,10 +454,10 @@ messages.</p>
 <span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt; [1] AlphaMissenseR_1.1.7 dplyr_1.1.4         </span></span>
+<span><span class="co">#&gt; [1] AlphaMissenseR_1.1.10 dplyr_1.1.4          </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
-<span><span class="co">#&gt;  [1] gtable_0.3.5            xfun_0.48               bslib_0.8.0            </span></span>
+<span><span class="co">#&gt;  [1] gtable_0.3.6            xfun_0.48               bslib_0.8.0            </span></span>
 <span><span class="co">#&gt;  [4] ggplot2_3.5.1           htmlwidgets_1.6.4       vctrs_0.6.5            </span></span>
 <span><span class="co">#&gt;  [7] rjsoncons_1.3.1         tools_4.5.0             generics_0.1.3         </span></span>
 <span><span class="co">#&gt; [10] stats4_4.5.0            curl_5.2.3              parallel_4.5.0         </span></span>
@@ -470,7 +471,7 @@ messages.</p>
 <span><span class="co">#&gt; [34] later_1.3.2             pillar_1.9.0            pkgdown_2.1.1          </span></span>
 <span><span class="co">#&gt; [37] jquerylib_0.1.4         whisker_0.4.1           tidyr_1.3.1            </span></span>
 <span><span class="co">#&gt; [40] cachem_1.1.0            mime_0.12               tidyselect_1.2.1       </span></span>
-<span><span class="co">#&gt; [43] r3dmol_0.1.2            digest_0.6.37           duckdb_1.1.0           </span></span>
+<span><span class="co">#&gt; [43] r3dmol_0.1.2            digest_0.6.37           duckdb_1.1.1           </span></span>
 <span><span class="co">#&gt; [46] purrr_1.0.2             fastmap_1.2.0           grid_4.5.0             </span></span>
 <span><span class="co">#&gt; [49] colorspace_2.1-1        cli_3.6.3               magrittr_2.0.3         </span></span>
 <span><span class="co">#&gt; [52] spdl_0.0.5              utf8_1.2.4              withr_3.0.1            </span></span>

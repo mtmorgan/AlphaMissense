@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">AlphaMissenseR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.10</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +93,7 @@ from the database.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/ClinVar.html">clinvar_data</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># Source:   table&lt;clinvar&gt; [?? x 5]</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v1.1.0 [root@Darwin 23.6.0:R 4.5.0//Users/mtmorgan/Library/Caches/org.R-project.R/R/BiocFileCache/121787f1dafbc_121787f1dafbc]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v1.1.1 [mtmorgan@Darwin 23.6.0:R 4.5.0//Users/mtmorgan/Library/Caches/org.R-project.R/R/BiocFileCache/121787f1dafbc_121787f1dafbc]</span></span></span>
 <span><span class="co">#&gt;    variant_id           transcript_id     protein_variant AlphaMissense label </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> chr1_925969_C_T_hg38 ENST00000342066.8 Q96NU1:P10S            0.967  benign</span></span>
@@ -122,8 +122,8 @@ it is possible to pass a custom AlphaMissense or ClinVar table to the
 function. See function details for more information.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/ClinVar.html">clinvar_plot</a></span><span class="op">(</span>uniprotId <span class="op">=</span> <span class="st">"P37023"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; * [14:07:24][info] 'alphamissense_table' not provided, using default 'am_data("aa_substitution")' table accessed through the AlphaMissenseR package</span></span>
-<span><span class="co">#&gt; * [14:07:27][info] 'clinvar_table' not provided, using default ClinVar dataset in AlphaMissenseR package</span></span></code></pre></div>
+<span><span class="co">#&gt; * [09:26:16][info] 'alphamissense_table' not provided, using default 'am_data("aa_substitution")' table accessed through the AlphaMissenseR package</span></span>
+<span><span class="co">#&gt; * [09:26:19][info] 'clinvar_table' not provided, using default ClinVar dataset in AlphaMissenseR package</span></span></code></pre></div>
 <p><img src="clinvar_files/figure-html/plot_P37023-1.png" width="672"></p>
 <p>We returned a <code>ggplot</code> object which overlays ClinVar
 classifications onto AlphaMissense predicted scores. Blue, gray, and red
@@ -141,7 +141,8 @@ been clinically-assessed), there may be proteins where information is
 not available. In this case, the function will provide an error.</p>
 <p>Remember to disconnect from the database.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/db.html">db_disconnect_all</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/db.html">db_disconnect_all</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; * [09:26:21][info] disconnecting all registered connections</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 class="unnumbered" id="session-information">Session information<a class="anchor" aria-label="anchor" href="#session-information"></a>
@@ -166,7 +167,7 @@ not available. In this case, the function will provide an error.</p>
 <span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt; [1] AlphaMissenseR_1.1.7 dplyr_1.1.4         </span></span>
+<span><span class="co">#&gt; [1] AlphaMissenseR_1.1.10 dplyr_1.1.4          </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
 <span><span class="co">#&gt;  [1] tidyr_1.3.1          sass_0.4.9           utf8_1.2.4          </span></span>
@@ -176,7 +177,7 @@ not available. In this case, the function will provide an error.</p>
 <span><span class="co">#&gt; [13] jsonlite_1.8.9       whisker_0.4.1        DBI_1.2.3           </span></span>
 <span><span class="co">#&gt; [16] httr_1.4.7           purrr_1.0.2          fansi_1.0.6         </span></span>
 <span><span class="co">#&gt; [19] scales_1.3.0         textshaping_0.4.0    jquerylib_0.1.4     </span></span>
-<span><span class="co">#&gt; [22] duckdb_1.1.0         cli_3.6.3            rlang_1.1.4         </span></span>
+<span><span class="co">#&gt; [22] duckdb_1.1.1         cli_3.6.3            rlang_1.1.4         </span></span>
 <span><span class="co">#&gt; [25] dbplyr_2.5.0         munsell_0.5.1        bit64_4.5.2         </span></span>
 <span><span class="co">#&gt; [28] withr_3.0.1          cachem_1.1.0         yaml_2.3.10         </span></span>
 <span><span class="co">#&gt; [31] BiocBaseUtils_1.7.3  tools_4.5.0          memoise_2.0.1       </span></span>
@@ -186,7 +187,7 @@ not available. In this case, the function will provide an error.</p>
 <span><span class="co">#&gt; [43] RcppSpdlog_0.0.18    fs_1.6.4             htmlwidgets_1.6.4   </span></span>
 <span><span class="co">#&gt; [46] bit_4.5.0            ragg_1.3.3           pkgconfig_2.0.3     </span></span>
 <span><span class="co">#&gt; [49] desc_1.4.3           pkgdown_2.1.1        pillar_1.9.0        </span></span>
-<span><span class="co">#&gt; [52] bslib_0.8.0          gtable_0.3.5         Rcpp_1.0.13         </span></span>
+<span><span class="co">#&gt; [52] bslib_0.8.0          gtable_0.3.6         Rcpp_1.0.13         </span></span>
 <span><span class="co">#&gt; [55] glue_1.8.0           systemfonts_1.1.0    highr_0.11          </span></span>
 <span><span class="co">#&gt; [58] xfun_0.48            tibble_3.2.1         tidyselect_1.2.1    </span></span>
 <span><span class="co">#&gt; [61] knitr_1.48           farver_2.1.2         htmltools_0.5.8.1   </span></span>
